@@ -27,8 +27,8 @@ class _ChatState extends State<Chat> {
           itemCount: snapshot.data.documents.length,
             itemBuilder: (context, index){
               return MessageTile(
-                message: snapshot.data.documents[index].data["message"],
-                sendByMe: Constants.myName == snapshot.data.documents[index].data["sendBy"],
+                message: snapshot.data.documents[index].data()["message"].toString(),
+                sendByMe: Constants.myName == snapshot.data.documents[index].data()["sendBy"],
               );
             }) : Container();
       },
@@ -103,14 +103,14 @@ class _ChatState extends State<Chat> {
                           height: 40,
                           width: 40,
                           decoration: BoxDecoration(
-                              gradient: LinearGradient(
+                              /*gradient: LinearGradient(
                                   colors: [
                                     const Color(0x36FFFFFF),
                                     const Color(0x0FFFFFFF)
                                   ],
                                   begin: FractionalOffset.topLeft,
                                   end: FractionalOffset.bottomRight
-                              ),
+                              ),*/
                               borderRadius: BorderRadius.circular(40)
                           ),
                           padding: EdgeInsets.all(12),
@@ -161,7 +161,7 @@ class MessageTile extends StatelessWidget {
         topLeft: Radius.circular(23),
           topRight: Radius.circular(23),
           bottomRight: Radius.circular(23)),
-            gradient: LinearGradient(
+            /*gradient: LinearGradient(
               colors: sendByMe ? [
                 const Color(0xff007EF4),
                 const Color(0xff2A75BC)
@@ -170,7 +170,7 @@ class MessageTile extends StatelessWidget {
                 const Color(0x1AFFFFFF),
                 const Color(0x1AFFFFFF)
               ],
-            )
+            */
         ),
         child: Text(message,
             textAlign: TextAlign.start,

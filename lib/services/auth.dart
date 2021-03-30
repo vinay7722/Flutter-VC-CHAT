@@ -8,8 +8,8 @@ import 'package:google_sign_in/google_sign_in.dart';
 class AuthService {
   final auth.FirebaseAuth _auth = auth.FirebaseAuth.instance;
 
-  auth.User _userFromFirebaseUser(auth.User user) {
-    //return user != null ? User(uid: user.uid) : null;
+  User _userFromFirebaseUser(auth.User user) {
+    return user != null ? User(uid: user.uid) : null;
   }
 
   Future signInWithEmailAndPassword(String email, String password) async {

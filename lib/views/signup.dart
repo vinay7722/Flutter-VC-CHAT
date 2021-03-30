@@ -111,9 +111,9 @@ class _SignUpState extends State<SignUp> {
                 padding: EdgeInsets.symmetric(vertical: 16),
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(30),
-                    gradient: LinearGradient(
+                    /*gradient: LinearGradient(
                       colors: [const Color(0xff007EF4), const Color(0xff2A75BC)],
-                    )),
+                    )*/),
                 width: MediaQuery.of(context).size.width,
                 child: Text(
                   "Sign Up",

@@ -45,10 +45,10 @@ class _SignInState extends State<SignIn> {
               await DatabaseMethods().getUserInfo(emailEditingController.text);
           print("45 line");
           HelperFunctions.saveUserLoggedInSharedPreference(true);
-         // HelperFunctions.saveUserNameSharedPreference(
-         //      userInfoSnapshot.docs[0].data('userName');
-         //  HelperFunctions.saveUserEmailSharedPreference(
-         //      userInfoSnapshot.docs[0].data['userEmail']);
+          HelperFunctions.saveUserNameSharedPreference(
+               userInfoSnapshot.docs[0].data()['userName']);
+           HelperFunctions.saveUserEmailSharedPreference(
+               userInfoSnapshot.docs[0].data()['userEmail']);
 
           Navigator.pushReplacement(
               context, MaterialPageRoute(builder: (context) => ChatRoom()));

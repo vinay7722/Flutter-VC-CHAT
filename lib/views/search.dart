@@ -42,10 +42,10 @@ class _SearchState extends State<Search> {
       shrinkWrap: true,
       itemCount: searchResultSnapshot.docs.length,
         itemBuilder: (context, index){
-        /*return userTile(
-          searchResultSnapshot.docs[index].data["userName"],
-          searchResultSnapshot.docs[index].data["userEmail"],
-        );*/
+        return userTile(
+          searchResultSnapshot.docs[index].data()["userName"].toString(),
+          searchResultSnapshot.docs[index].data()["userEmail"].toString(),
+        );
         }) : Container();
   }
 
@@ -171,14 +171,14 @@ class _SearchState extends State<Search> {
                       height: 40,
                         width: 40,
                         decoration: BoxDecoration(
-                          gradient: LinearGradient(
+                          /*gradient: LinearGradient(
                             colors: [
                               const Color(0x36FFFFFF),
                               const Color(0x0FFFFFFF)
                             ],
                             begin: FractionalOffset.topLeft,
                             end: FractionalOffset.bottomRight
-                          ),
+                          ),*/
                           borderRadius: BorderRadius.circular(40)
                         ),
                         padding: EdgeInsets.all(12),
